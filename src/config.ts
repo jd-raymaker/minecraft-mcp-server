@@ -5,6 +5,7 @@ export interface ServerConfig {
   host: string;
   port: number;
   username: string;
+  auth: string;
 }
 
 export function parseConfig(): ServerConfig {
@@ -24,7 +25,13 @@ export function parseConfig(): ServerConfig {
       description: 'Bot username',
       default: 'LLMBot'
     })
+    .option('auth', {
+      type: 'string',
+      description: 'Authentication method. microsoft, mojang, or offline',
+      default: 'offline'
+    })
     .help()
     .alias('help', 'h')
     .parseSync();
 }
+
