@@ -11,6 +11,7 @@ interface BotConfig {
   host: string;
   port: number;
   username: string;
+  auth: string;
 }
 
 interface ConnectionCallbacks {
@@ -54,6 +55,7 @@ export class BotConnection {
       host: this.config.host,
       port: this.config.port,
       username: this.config.username,
+      auth: this.config.auth,
       plugins: { pathfinder },
     };
 
