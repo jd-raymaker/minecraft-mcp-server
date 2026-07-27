@@ -32,6 +32,5 @@ export function parseConfig(): ServerConfig {
     })
     .help()
     .alias('help', 'h')
-    .parseSync();
+    .parseSync() as unknown as ServerConfig;
 }
-
