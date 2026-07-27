@@ -5,7 +5,7 @@ export interface ServerConfig {
   host: string;
   port: number;
   username: string;
-  auth: string;
+  auth: 'microsoft' | 'mojang' | 'offline';
 }
 
 export function parseConfig(): ServerConfig {
